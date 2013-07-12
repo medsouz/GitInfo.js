@@ -1,0 +1,25 @@
+{
+  "name": "GitInfo",
+  "version": "0.1.0",
+  "description": "Get information about the git respository your Node program is running from",
+  "main": "gitinfo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medsouz/GitInfo.js.git"
+  },
+  "keywords": [
+    "Git",
+    "Info",
+    "Contributors",
+    "Head",
+    "Commit"
+  ],
+  "author": "medsouz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/medsouz/GitInfo.js/issues"
+  }
+}
