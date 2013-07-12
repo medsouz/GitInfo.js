@@ -4,8 +4,14 @@ var exec = require("child_process").exec;
 
 function arrayContains(array, item){
 	for(var x = 0; x < array.length; x++){	
-		if(array[x] == item){
-			return true;
+		if(sys.isArray(array[x])){
+			if(array[x][0] == item[0]){
+				return true;
+			}
+		}else{
+			if(array[x] == item){
+				return true;
+			}
 		}
 	}
 	return false;
@@ -38,10 +44,10 @@ exports.getContributors = function(callback, type){
 		var contributors = new Array();
 		for(var num = 0; num < lines.length; num++){
 			var entry = lines[num].toString();
+			if(type == 2){
+				entry = entry.split("|");				
+			}
 			if(!arrayContains(contributors, entry)){
-				if(type == 2){
-					entry = entry.split("|");				
-				}
 				contributors[contributors.length] = entry;
 			}
 		}
@@ -56,3 +62,4 @@ exports.getHEAD = function(callback){
 		callback(stdout.split("\n")[0]);
 	});
 }
+
