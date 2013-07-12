@@ -38,7 +38,6 @@ exports.getContributors = function(callback, type){
 		var contributors = new Array();
 		for(var num = 0; num < lines.length; num++){
 			var entry = lines[num].toString();
-			console.log(entry);
 			if(!arrayContains(contributors, entry)){
 				if(type == 2){
 					entry = entry.split("|");				
