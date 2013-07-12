@@ -18,7 +18,7 @@ exports.NAME_AND_EMAIL = 2;
 
 //Get an array of all the contributors
 //GitInfo.getContributors(function(array){},type);
-//Available types: GitInfo.NAME = nickname, GitInfo.EMAIL = email, GitInfo.NAME_AND_EMAIL = name|email
+//Available types: GitInfo.NAME = nickname, GitInfo.EMAIL = email, GitInfo.NAME_AND_EMAIL = [name, email]
 //Default: NAME
 exports.getContributors = function(callback, type){
 	var format = "%an";
@@ -38,7 +38,11 @@ exports.getContributors = function(callback, type){
 		var contributors = new Array();
 		for(var num = 0; num < lines.length; num++){
 			var entry = lines[num].toString();
+			console.log(entry);
 			if(!arrayContains(contributors, entry)){
+				if(type == 2){
+					entry = entry.split("|");				
+				}
 				contributors[contributors.length] = entry;
 			}
 		}
