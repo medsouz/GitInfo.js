@@ -1,5 +1,5 @@
 {
-  "name": "GitInfo",
+  "name": "gitinfo",
   "version": "0.1.1",
   "description": "Get information about the git respository your Node program is running from",
   "main": "gitinfo.js",
